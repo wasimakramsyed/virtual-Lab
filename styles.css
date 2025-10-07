@@ -24,8 +24,10 @@ body{background:#fff}
 .two-column{display:flex;gap:30px;align-items:flex-start}
 /* when only a single column is present (mind map removed) */
 .two-column.single{display:block}
-.experiments{flex:1;padding-left:18px;color:#2a8ac7}
+.experiments{flex:1;padding-left:18px;color:#2a8ac7;list-style-position:inside}
 .experiments li{margin:16px 0;font-size:18px}
+.experiments li a{text-decoration:none;color:#2a8ac7}
+.experiments li a:hover{color:#ff7a00}
 .mindmap{width:360px;background:#fbfbfb;border-radius:6px;padding:20px;text-align:center;border:1px solid #f0f0f0}
 .mindmap h3{color:#2a8ac7;margin-bottom:10px}
 .mindmap-link{display:inline-block;background:#27a6a6;color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;margin-bottom:12px}

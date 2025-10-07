@@ -10,10 +10,10 @@
   <header class="site-header">
     <button class="menu-btn" aria-label="open menu">☰</button>
     <div class="brand">
-      <img src="assets/logo.svg" alt="Virtual Labs logo" class="logo">
+      <img src="assets/virtual-lab-logo.png" alt="Virtual Labs logo" class="logo">
       <span class="brand-text">Virtual Labs</span>
     </div>
-    <div class="rating">★★★★★</div>
+  <img src="assets/gitam-uni-logo.jpg" alt="GITAM logo" class="gitam-logo">
     <!-- Nav buttons removed as requested -->
   </header>
 
@@ -36,14 +36,14 @@
 
         <div class="two-column single">
           <ol class="experiments">
-            <li id="exp1">Introduction to Java programming language</li>
-            <li id="exp2">Creating Classes and their Objects in Java</li>
-            <li id="exp3">Using constructors to create objects</li>
-            <li id="exp4">To understand the inheritance in Java</li>
-            <li id="exp5">Implementing Method Overloading</li>
-            <li id="exp6">Implementing Method Overriding</li>
-            <li id="exp7">Learning of abstraction through Interface</li>
-            <li id="exp8">Learning of Encapsulation through Package</li>
+            <li id="exp1"><a href="https://jagged-array-simulator.vercel.app/">jagged-array-simulator</a></li>
+            <li id="exp2"><a href="https://anonymous-array-simulator.vercel.app/">anonymous-array-simulator</a></li>
+            <li id="exp3"><a href="https://multilevel-inheritance-simulator.vercel.app/">multilevel-inheritance-simulator</a></li>
+            <li id="exp4"><a href="https://hybrid-simulator.vercel.app/">hybrid-simulator</a></li>
+            <li id="exp5"><a href="https://super-simulator.vercel.app/">super-simulator</a></li>
+            <li id="exp6"><a href="https://final-simulator.vercel.app/">final-simulator</a></li>
+            <li id="exp7"><a href="https://multiple-simulator.vercel.app/">multiple-simulator</a></li>
+            <li id="exp8"><a href="https://simulator-package.vercel.app/">package-simulator</a></li>
           </ol>
         </div>
 
@@ -52,7 +52,42 @@
   </div>
 
   <footer class="site-footer">
-    <p>© Virtual Labs — demo page</p>
+    <p>© Virtual Labs </p>
   </footer>
+
+  <script>
+    // Toggle sidebar visibility when menu button is clicked
+    const menuBtn = document.querySelector('.menu-btn');
+    const sidebar = document.querySelector('.sidebar');
+    
+    menuBtn.addEventListener('click', () => {
+      if (window.innerWidth > 900) {
+        // Desktop mode: toggle hidden class to collapse/expand
+        sidebar.classList.toggle('sidebar-hidden');
+      } else {
+        // Mobile mode: toggle visible class to slide in/out
+        sidebar.classList.toggle('sidebar-visible');
+      }
+    });
+    
+    // Close sidebar when clicking outside on mobile
+    document.addEventListener('click', (e) => {
+      if (window.innerWidth <= 900 && 
+          sidebar.classList.contains('sidebar-visible') && 
+          !sidebar.contains(e.target) && 
+          !menuBtn.contains(e.target)) {
+        sidebar.classList.remove('sidebar-visible');
+      }
+    });
+    
+    // Handle window resize - clean up classes
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) {
+        sidebar.classList.remove('sidebar-visible');
+      } else {
+        sidebar.classList.remove('sidebar-hidden');
+      }
+    });
+  </script>
 </body>
 </html>
